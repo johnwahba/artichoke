@@ -1,5 +1,6 @@
 [workspace]
 members = [
+  "artichoke-core",
   "artichoke-vfs",
   "mruby",
   "mruby-bin",
