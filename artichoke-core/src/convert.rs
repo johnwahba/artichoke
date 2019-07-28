@@ -98,7 +98,7 @@ mod tests {
         };
         assert_eq!(
             format!("{}", err),
-            "failed to convert from ruby Fixnum to rust Vec"
+            "failed to convert from Ruby Fixnum to Rust Vec"
         );
     }
 
@@ -110,7 +110,7 @@ mod tests {
         };
         assert_eq!(
             format!("{:?}", err),
-            "mruby conversion error: failed to convert from ruby Fixnum to rust Vec"
+            "failed to convert from Ruby Fixnum to Rust Vec"
         );
     }
 
@@ -122,7 +122,7 @@ mod tests {
         };
         assert_eq!(
             format!("{}", err),
-            "failed to convert from rust bool to ruby String"
+            "failed to convert from Rust bool to Ruby String"
         );
     }
 
@@ -134,7 +134,7 @@ mod tests {
         };
         assert_eq!(
             format!("{:?}", err),
-            "mruby conversion error: failed to convert from rust bool to ruby String"
+            "failed to convert from Rust bool to Ruby String"
         );
     }
 }
