@@ -11,15 +11,6 @@ pub const MRB_FUNCALL_ARGC_MAX: usize = 16;
 pub trait Value<I> {
     fn ruby_type(&self) -> types::Ruby;
 
-    /// Some type tags like [`MRB_TT_UNDEF`](sys::mrb_vtype::MRB_TT_UNDEF) are
-    /// internal to the mruby VM and manipulating them with the [`sys`] API is
-    /// unspecified and may result in a segfault.
-    ///
-    /// After extracting a [`sys::mrb_value`] from the interpreter, check to see
-    /// if the value is [unreachable](types::Ruby::Unreachable) and propagate an
-    /// [`ArtichokeError::UnreachableValue`](crate::ArtichokeError::UnreachableValue) error.
-    ///
-    /// See: <https://github.com/mruby/mruby/issues/4460>
     fn is_unreachable(&self) -> bool {
         self.ruby_type() == types::Ruby::Unreachable
     }

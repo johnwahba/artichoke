@@ -49,6 +49,7 @@ pub enum LastError {
 }
 
 /// Extract the last exception thrown on the interpreter.
+#[allow(clippy::module_name_repetitions)]
 pub trait ExceptionHandler {
     /// Extract the last thrown exception on the interpreter if there is one.
     ///

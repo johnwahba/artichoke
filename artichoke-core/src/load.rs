@@ -4,6 +4,7 @@ use crate::file::File;
 use crate::fs::RUBY_LOAD_PATH;
 use crate::ArtichokeError;
 
+#[allow(clippy::module_name_repetitions)]
 pub trait LoadSources
 where
     Self: Sized,

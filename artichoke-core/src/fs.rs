@@ -18,9 +18,8 @@ impl<I: Clone> Filesystem<I> {
     /// Create a new in memory virtual filesystem.
     ///
     /// Creates a directory at [`RUBY_LOAD_PATH`] for storing Ruby source files.
-    /// This path is searched by
-    /// [`Kernel::require`](crate::extn::core::kernel::Kernel::require) and
-    /// [`Kernel::require_relative`](crate::extn::core::kernel::Kernel::require_relative).
+    /// This path is searched by `Kernel::require` and
+    /// `Kernel::require_relative` for Ruby sources.
     pub fn new() -> Result<Self, ArtichokeError> {
         let fs = FakeFileSystem::new();
         fs.create_dir_all(RUBY_LOAD_PATH)

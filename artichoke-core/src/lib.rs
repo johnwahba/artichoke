@@ -24,13 +24,13 @@ pub mod warn;
 pub enum ArtichokeError {
     /// Failed to create an argspec.
     ArgSpec,
-    /// Failed to convert from a Rust type to a [`sys::mrb_value`].
+    /// Failed to convert from a Rust type to a [`Value`](value::Value).
     ConvertToRuby(convert::Error<value::types::Rust, value::types::Ruby>),
-    /// Failed to convert from a [`sys::mrb_value`] to a Rust type.
+    /// Failed to convert from a [`Value`](value::Value) to a Rust type.
     ConvertToRust(convert::Error<value::types::Ruby, value::types::Rust>),
     /// Exception raised during eval.
     ///
-    /// See [`ArtichokeEval`](eval::ArtichokeEval).
+    /// See [`Eval`](eval::Eval).
     Exec(exception::Exception),
     /// Unable to initalize interpreter.
     New,

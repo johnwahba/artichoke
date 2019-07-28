@@ -10,6 +10,7 @@ pub trait Convert<I, T> {
     fn convert(interp: &I, value: T) -> Self;
 }
 
+#[allow(clippy::module_name_repetitions)]
 pub trait TryConvert<I, T>
 where
     Self: Sized,
@@ -30,7 +31,7 @@ where
     type To = <Self as Convert<I, F>>::To;
 
     unsafe fn try_convert(interp: &I, value: F) -> Result<Self, Error<Self::From, Self::To>> {
-        Ok(T::convert(interp, value))
+        Ok(Self::convert(interp, value))
     }
 }
 
