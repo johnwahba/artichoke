@@ -1,11 +1,8 @@
+use crate::types;
 use crate::ArtichokeError;
 
-pub mod types;
-
 /// Max argument count for function calls including initialize.
-///
-/// Defined in `vm.c`.
-pub const MRB_FUNCALL_ARGC_MAX: usize = 16;
+pub const FUNCALL_ARGC_MAX: usize = 16;
 
 #[allow(clippy::module_name_repetitions)]
 pub trait Value<I> {

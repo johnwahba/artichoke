@@ -16,6 +16,7 @@ pub mod load;
 pub mod method;
 pub mod nil;
 pub mod top_self;
+pub mod types;
 pub mod value;
 pub mod warn;
 
@@ -25,9 +26,9 @@ pub enum ArtichokeError {
     /// Failed to create an argspec.
     ArgSpec,
     /// Failed to convert from a Rust type to a [`Value`](value::Value).
-    ConvertToRuby(convert::Error<value::types::Rust, value::types::Ruby>),
+    ConvertToRuby(convert::Error<types::Rust, types::Ruby>),
     /// Failed to convert from a [`Value`](value::Value) to a Rust type.
-    ConvertToRust(convert::Error<value::types::Ruby, value::types::Rust>),
+    ConvertToRust(convert::Error<types::Ruby, types::Rust>),
     /// Exception raised during eval.
     ///
     /// See [`Eval`](eval::Eval).

@@ -1,7 +1,8 @@
 use std::error;
 use std::fmt;
 
-use crate::value::{types, Value};
+use crate::types;
+use crate::value::Value;
 
 pub trait Convert<I, T> {
     type From;
@@ -88,7 +89,7 @@ where
 #[cfg(test)]
 mod tests {
     use crate::convert::Error;
-    use crate::value::types::*;
+    use crate::types::*;
 
     #[test]
     fn ruby_to_rust_error_display() {
