@@ -11,7 +11,6 @@ use crate::sys;
 use crate::value::Value;
 use crate::{Artichoke, ArtichokeError};
 
-#[cfg(not(target_arch = "wasm32"))]
 mod scan;
 
 pub fn patch(interp: &Artichoke) -> Result<(), ArtichokeError> {
